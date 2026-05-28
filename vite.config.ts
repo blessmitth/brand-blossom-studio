@@ -7,8 +7,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Use the Netlify Nitro preset when deploying to Netlify (set DEPLOY_TARGET=netlify
-// in Netlify's build environment). Falls back to the Lovable/Cloudflare default
-// for previews inside Lovable.
+// in Netlify's build environment via netlify.toml). Falls back to the Lovable/Cloudflare
+// default for previews inside Lovable.
 const isNetlify =
   process.env.DEPLOY_TARGET === "netlify" || !!process.env.NETLIFY;
 
@@ -22,6 +22,14 @@ export default defineConfig({
     ? {
         nitro: {
           preset: "netlify",
+          // Restore the Netlify preset's expected output paths (the Lovable
+          // wrapper otherwise forces dist/server + dist/client, which breaks
+          // Netlify's function discovery in .netlify/functions-internal).
+          output: {
+            dir: "./.netlify/functions-internal",
+            serverDir: "./.netlify/functions-internal/server",
+            publicDir: "./dist",
+          },
         },
       }
     : {}),
