@@ -34,7 +34,7 @@ export function Footer() {
               aria-label={`WhatsApp ${WHATSAPP_NUMBER}`}
               className="w-10 h-10 grid place-items-center border border-white/20 hover:border-gold hover:text-gold transition-colors"
             >
-              <MessageCircle size={16} />
+              <WhatsAppIcon size={16} />
             </a>
             <a
               href={`mailto:${EMAIL}`}
