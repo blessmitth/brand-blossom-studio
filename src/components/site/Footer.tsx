@@ -35,20 +35,6 @@ export function Footer() {
               <Mail size={16} />
             </a>
           </div>
-          <div className="pt-4 space-y-2 text-sm text-platinum/80">
-            <div>
-              <span className="text-xs tracking-[0.25em] uppercase text-gold mr-2">Location</span>
-              Global
-            </div>
-            <div className="flex items-center gap-2">
-              <MessageCircle size={14} className="text-gold" />
-              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="hover:text-gold">{WHATSAPP_NUMBER}</a>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} className="text-gold" />
-              <a href={`mailto:${EMAIL}`} className="hover:text-gold">{EMAIL}</a>
-            </div>
-          </div>
         </div>
 
         <div className="lg:col-span-2">
