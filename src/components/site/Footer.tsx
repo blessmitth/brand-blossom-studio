@@ -1,6 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
+
+const WHATSAPP_NUMBER = "+1 539 230 9068";
+const WHATSAPP_HREF = "https://wa.me/15392309068";
+const EMAIL = "partners@prymesphere.com";
 
 export function Footer() {
   return (
@@ -14,15 +18,36 @@ export function Footer() {
             world's most ambitious enterprises.
           </p>
           <div className="flex gap-3 pt-2">
-            {[Linkedin, Twitter, Mail].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="w-10 h-10 grid place-items-center border border-white/20 hover:border-gold hover:text-gold transition-colors"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`WhatsApp ${WHATSAPP_NUMBER}`}
+              className="w-10 h-10 grid place-items-center border border-white/20 hover:border-gold hover:text-gold transition-colors"
+            >
+              <MessageCircle size={16} />
+            </a>
+            <a
+              href={`mailto:${EMAIL}`}
+              aria-label={`Email ${EMAIL}`}
+              className="w-10 h-10 grid place-items-center border border-white/20 hover:border-gold hover:text-gold transition-colors"
+            >
+              <Mail size={16} />
+            </a>
+          </div>
+          <div className="pt-4 space-y-2 text-sm text-platinum/80">
+            <div>
+              <span className="text-xs tracking-[0.25em] uppercase text-gold mr-2">Location</span>
+              Global
+            </div>
+            <div className="flex items-center gap-2">
+              <MessageCircle size={14} className="text-gold" />
+              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer" className="hover:text-gold">{WHATSAPP_NUMBER}</a>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail size={14} className="text-gold" />
+              <a href={`mailto:${EMAIL}`} className="hover:text-gold">{EMAIL}</a>
+            </div>
           </div>
         </div>
 
