@@ -36,8 +36,8 @@ function ContactPage() {
           <div className="lg:col-span-5 space-y-10">
             {[
               { Icon: Mail, t: "Email", d: "partners@prymesphere.com" },
-              { Icon: Phone, t: "Direct line", d: "+44 (0) 20 7946 0100" },
-              { Icon: MapPin, t: "Offices", d: "London · New York · Singapore · Dubai" },
+              { Icon: Phone, t: "WhatsApp", d: "+1 539 230 9068" },
+              { Icon: MapPin, t: "Location", d: "Global" },
             ].map(({ Icon, t, d }) => (
               <div key={t} className="flex gap-5">
                 <div className="w-12 h-12 grid place-items-center border border-gold/50 text-gold shrink-0">
