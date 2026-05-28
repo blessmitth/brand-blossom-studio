@@ -35,7 +35,7 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5 space-y-10">
             {[
-              { Icon: Mail, t: "Email", d: "partners@prymesphere.com" },
+              { Icon: Mail, t: "Email", d: "talent@prymesphere.com" },
               { Icon: Phone, t: "WhatsApp", d: "+1 539 230 9068" },
               { Icon: MapPin, t: "Location", d: "Global" },
             ].map(({ Icon, t, d }) => (
