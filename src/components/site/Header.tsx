@@ -31,15 +31,15 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
-        <Link to="/" className="shrink-0"><Logo /></Link>
+        <Link to="/" className={`shrink-0 ${scrolled ? "" : "[&_*]:!text-white"}`}><Logo /></Link>
 
         <nav className="hidden lg:flex items-center gap-9">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-sm tracking-wide text-foreground/80 hover:text-gold transition-colors font-medium"
-              activeProps={{ className: "text-gold" }}
+              className={`text-sm tracking-wide hover:text-gold transition-colors font-medium ${scrolled ? "text-foreground/80" : "text-white/90 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]"}`}
+              activeProps={{ className: "!text-gold" }}
             >
               {n.label}
             </Link>
@@ -49,13 +49,13 @@ export function Header() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/contact"
-            className="text-xs tracking-[0.2em] uppercase px-5 py-3 border border-foreground/20 hover:border-gold hover:text-gold transition-colors"
+            className={`text-xs tracking-[0.2em] uppercase px-5 py-3 border hover:border-gold hover:text-gold transition-colors ${scrolled ? "border-foreground/20 text-foreground" : "border-white/40 text-white"}`}
           >
             For Candidates
           </Link>
           <Link
             to="/contact"
-            className="text-xs tracking-[0.2em] uppercase px-5 py-3 bg-navy-deep text-white hover:bg-gold hover:text-navy-deep transition-colors"
+            className={`text-xs tracking-[0.2em] uppercase px-5 py-3 transition-colors ${scrolled ? "bg-navy-deep text-white hover:bg-gold hover:text-navy-deep" : "bg-gold text-navy-deep hover:bg-gold-soft"}`}
           >
             For Employers
           </Link>
@@ -64,7 +64,7 @@ export function Header() {
         <button
           aria-label="Menu"
           onClick={() => setOpen(!open)}
-          className="lg:hidden p-2 text-foreground"
+          className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
