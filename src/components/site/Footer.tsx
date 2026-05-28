@@ -13,7 +13,7 @@ function WhatsAppIcon({ size = 16 }: { size?: number }) {
 
 const WHATSAPP_NUMBER = "+1 539 230 9068";
 const WHATSAPP_HREF = "https://wa.me/15392309068";
-const EMAIL = "partners@prymesphere.com";
+const EMAIL = "talent@prymesphere.com";
 
 export function Footer() {
   return (
